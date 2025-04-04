@@ -49,7 +49,7 @@ body {
     flex-direction: column;
 }
 
-/* Particle Background */
+
 .particles-container {
     position: fixed;
     top: 0;
@@ -59,7 +59,7 @@ body {
     z-index: -1;
 }
 
-/* Navigation */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -153,7 +153,7 @@ body {
     transition: var(--transition);
 }
 
-/* Container Styles */
+
 .container, .generator-page {
     max-width: 1200px;
     margin: 100px auto 50px;
@@ -161,7 +161,7 @@ body {
     width: 100%;
 }
 
-/* Hero Section */
+
 .hero-section {
     text-align: center;
     padding: 3rem 1rem;
@@ -206,7 +206,7 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Feature Cards */
+
 .features {
     display: flex;
     justify-content: center;
@@ -292,7 +292,7 @@ body {
     line-height: 1.6;
 }
 
-/* CTA Section */
+
 .cta-section {
     margin-top: 3rem;
 }
@@ -338,7 +338,7 @@ body {
     animation: pulse 2s infinite;
 }
 
-/* Content Box */
+
 .content-box {
     background-color: var(--card-bg);
     border-radius: var(--radius);
@@ -374,7 +374,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Context Selector */
+
 .context-selector, .filters {
     margin-bottom: 1.5rem;
 }
@@ -427,7 +427,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Output Box */
+
 .output-box {
     background-color: var(--background);
     border: 1px solid var(--border-color);
@@ -483,7 +483,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Generate Button */
+
 .interactive-btn {
     background-color: var(--primary-color);
     color: white;
@@ -526,7 +526,7 @@ body {
     background-color: #e55c5c;
 }
 
-/* Saved Items Section */
+
 .save-section {
     margin-top: 2rem;
     border-top: 1px solid var(--border-color);
@@ -589,7 +589,7 @@ body {
     width: 100%;
 }
 
-/* About Page */
+
 .about-content {
     text-align: left;
 }
@@ -626,7 +626,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Footer */
+
 footer {
     background-color: var(--card-bg);
     padding: 3rem 0 1rem;
@@ -709,7 +709,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -1012,9 +1012,9 @@ footer {
 
 .output-actions {
     display: flex; 
-    justify-content: center; /* Center align buttons */
-    gap: 10px; /* Add spacing between buttons */
-    margin-top: 10px; /* Optional: Adjust spacing */
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 10px; 
 }
 
 .action-btn {
