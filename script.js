@@ -1,4 +1,4 @@
-// Arrays for excuses, compliments, and gift ideas
+
 const excuses = [
     "My alarm didn't go off because my cat unplugged it during the night.",
     "I was abducted by aliens who were running late themselves.",
@@ -83,24 +83,24 @@ const giftIdeas = [
     
 ];
 
-// Navigation function
+
 function navigate(page) {
-    // Hide all pages first
+    
     document.getElementById('home').classList.add('hidden');
     document.getElementById('excuse').classList.add('hidden');
     document.getElementById('compliment').classList.add('hidden');
     document.getElementById('gift').classList.add('hidden');
     
-    // Show the selected page
+    
     document.getElementById(page).classList.remove('hidden');
     
-    // Clear any previously generated content when navigating
+    
     document.getElementById('excuse-output').textContent = '';
     document.getElementById('compliment-output').textContent = '';
     document.getElementById('gift-output').textContent = '';
 }
 
-// Generator functions with animations
+
 function generateExcuse() {
     const outputElement = document.getElementById('excuse-output');
     animateGeneration(outputElement, excuses);
@@ -116,48 +116,48 @@ function generateGift() {
     animateGeneration(outputElement, giftIdeas);
 }
 
-// Animation function for generating content
+
 function animateGeneration(element, array) {
-    // First, make the output fade out
+   
     element.style.opacity = '0';
     element.style.transition = 'opacity 0.3s ease';
     
-    // After fade out, change the content and fade back in
+    
     setTimeout(() => {
-        // Get random item from the array
+        
         const randomIndex = Math.floor(Math.random() * array.length);
         element.textContent = array[randomIndex];
         
-        // Fade in with the new content
+        
         element.style.opacity = '1';
         element.style.transition = 'opacity 0.5s ease';
     }, 300);
 }
 
-// Initialize the app
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Start on home page
+    
     navigate('home');
     
-    // Add keyboard shortcuts
+    
     document.addEventListener('keydown', function(event) {
-        // Press 'H' for home
+        
         if (event.key === 'h' || event.key === 'H') {
             navigate('home');
         }
-        // Press 'E' for excuse generator
+        
         else if (event.key === 'e' || event.key === 'E') {
             navigate('excuse');
         }
-        // Press 'C' for compliment generator
+        
         else if (event.key === 'c' || event.key === 'C') {
             navigate('compliment');
         }
-        // Press 'G' for gift ideas
+        
         else if (event.key === 'g' || event.key === 'G') {
             navigate('gift');
         }
-        // Press spacebar to generate within a page
+        
         else if (event.key === ' ' && !document.getElementById('home').classList.contains('hidden') === false) {
             if (!document.getElementById('excuse').classList.contains('hidden')) {
                 generateExcuse();
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Apply smooth hover effects to all buttons
+    
     const buttons = document.querySelectorAll('.interactive-btn');
     buttons.forEach(button => {
         button.addEventListener('mouseenter', () => {
@@ -187,9 +187,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add confetti effect for compliments
+
 function showConfetti() {
-    // Create confetti container
+    
     const confettiContainer = document.createElement('div');
     confettiContainer.style.position = 'fixed';
     confettiContainer.style.top = '0';
@@ -200,7 +200,7 @@ function showConfetti() {
     confettiContainer.style.zIndex = '1000';
     document.body.appendChild(confettiContainer);
     
-    // Create confetti pieces
+    
     const colors = ['#ff5252', '#4caf50', '#2196f3', '#ff9800', '#9c27b0'];
     for (let i = 0; i < 100; i++) {
         const confetti = document.createElement('div');
@@ -216,7 +216,7 @@ function showConfetti() {
         
         confettiContainer.appendChild(confetti);
         
-        // Animate confetti falling
+        
         const duration = Math.random() * 3 + 2;
         const delay = Math.random() * 3;
         
@@ -230,32 +230,32 @@ function showConfetti() {
         });
     }
     
-    // Remove confetti container after animation
+    
     setTimeout(() => {
         document.body.removeChild(confettiContainer);
     }, 6000);
 }
 
-// Add confetti to compliment generation
+
 const originalGenerateCompliment = generateCompliment;
 generateCompliment = function() {
     originalGenerateCompliment();
     showConfetti();
 };
 
-// Select the theme toggle button
+
 const themeToggle = document.querySelector(".theme-toggle");
 
-// Check if dark mode was previously enabled (store in localStorage)
+
 if (localStorage.getItem("darkMode") === "enabled") {
     document.body.classList.add("dark-theme");
 }
 
-// Add event listener to toggle dark mode
+
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
-    // Store preference in localStorage
+    
     if (document.body.classList.contains("dark-theme")) {
         localStorage.setItem("darkMode", "enabled");
     } else {
@@ -272,13 +272,13 @@ function scrollToSection(sectionId) {
 
 
 function navigate(section) {
-    // Hide all sections
+    
     document.querySelectorAll('.generator-page').forEach(page => page.classList.add('hidden'));
 
-    // Show the selected section
+    
     document.getElementById(section).classList.remove('hidden');
 
-    // Scroll to the section smoothly
+    
     document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
 }
 
